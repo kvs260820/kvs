@@ -73,7 +73,7 @@
         /* ===== SECTION 1: FIRST VIEW ===== */
         #fv {
             background: radial-gradient(circle at 70% 30%, #1e293b 0%, #0a0e17 70%);
-            padding: 80px 0 10px;
+            padding: 80px 0 30px;
             min-height: 90vh;
             display: flex;
             align-items: center;
@@ -128,18 +128,17 @@
             text-align: center;
         }
 
-        .ceo-img-placeholder {
+        .ceo-top-img {
             width: 100%;
-            height: 420px;
-            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-            border: 1px solid var(--border-color);
+            max-width: 420px;
+            height: 480px;
+            object-fit: cover;
+            object-position: top center;
             border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-sub);
+            border: 1px solid var(--border-color);
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            display: block;
+            margin: 0 auto;
         }
 
         /* ===== SECTION 2: RISK OF CEO ===== */
@@ -315,7 +314,60 @@
             margin-bottom: 10px;
         }
 
-        /* ===== SECTION 6: CTA ===== */
+        /* ===== SECTION 6: PROFILE ===== */
+        .profile-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .profile-img-wrap {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 280px;
+            height: 340px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 12px;
+            border: 2px solid var(--gold-main);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .profile-role {
+            color: var(--gold-main);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .profile-text {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* ===== SECTION 7: CTA ===== */
         #cta-sec {
             background: radial-gradient(circle at center, #1e1b4b 0%, #0a0e17 100%);
             border: 2px solid var(--gold-main);
@@ -340,11 +392,46 @@
 
         /* ===== FOOTER ===== */
         footer {
-            text-align: center;
-            padding: 30px 0;
+            padding: 50px 0 30px;
             color: var(--text-sub);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
+            background-color: #06090f;
+        }
+
+        .footer-company {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .footer-company-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .footer-company-info {
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-company-info a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .footer-copy {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #64748b;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
         }
 
         /* ANIMATION */
@@ -355,7 +442,7 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .fv-grid, .sec1-grid, .trust-box {
+            .fv-grid, .sec1-grid, .trust-box, .profile-card {
                 grid-template-columns: 1fr;
             }
             .scheme-grid {
@@ -366,6 +453,13 @@
             }
             .stat-number {
                 font-size: 3rem;
+            }
+            .ceo-top-img {
+                height: 360px;
+            }
+            .profile-img {
+                max-width: 220px;
+                height: 280px;
             }
         }
     </style>
@@ -385,14 +479,10 @@
                 <p class="fv-desc">
                     多忙を理由にご自身の健康管理を棚上げしていませんか？代表の長期離脱は会社の停滞・倒産リスクそのものです。ビジネス特許取得の「がん予防・全額保障共済」で会社と家族を守り抜く。
                 </p>
-                <a href="#cta-sec" class="btn-cta">今すぐ自社のリスクを可視化する（無料）</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScBxJOSQpY2W0-juwAb9yXVhZh6Ho6TkFADCV5Iy1e1etnu4g/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn-cta">今すぐ自社のリスクを可視化する（無料）</a>
             </div>
             <div class="fv-image-container">
-                <div class="ceo-img-placeholder">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">👔</div>
-                    <p style="font-weight: bold; color: #fff;">【経営者ビジュアル】</p>
-                    <p style="font-size: 0.85rem; margin-top: 5px; max-width: 80%;">腕を組み、険しい表情で前を見据えるスーツ姿の代表者（ダークトーン背景）</p>
-                </div>
+                <img src="https://lh3.googleusercontent.com/d/1-ruLJ_i808dVAnT3Bl2UrBEh4bTnj_h8" alt="代表者ビジュアル" class="ceo-top-img">
             </div>
         </div>
     </section>
@@ -539,21 +629,55 @@
         </div>
     </section>
 
-    <!-- 6. コンバージョンエリア（CTA） -->
+    <!-- 6. セクション5：【人物紹介・メッセージ】 -->
+    <section class="sec-padding">
+        <div class="container">
+            <div class="sec-header">
+                <span class="sec-tag">REPRESENTATIVE / 代表紹介</span>
+                <h2 class="sec-title">経営者自身と企業の未来を守るために</h2>
+            </div>
+            <div class="profile-card">
+                <div class="profile-img-wrap">
+                    <img src="https://lh3.googleusercontent.com/d/1xKfaE7Uq-U9rwRFqqVxcB25HzSM4-SfH" alt="合同会社KVS 代表 曽我 篤" class="profile-img">
+                </div>
+                <div>
+                    <div class="profile-role">合同会社KVS 代表</div>
+                    <h3 class="profile-name">曽我 篤</h3>
+                    <p class="profile-text">
+                        経営者は、自身だけでなく従業員やその家族の生活をも背負う重責を担っています。しかし、多忙を極める日常の中で、どうしても自身の健康リスクへの備えは後回しになりがちです。<br><br>
+                        病によって代表者が不在となることは、事業の継続性を揺るがす最大の危機となります。「起きてからでは遅い」からこそ、早期リスクの把握と徹底した予防体制の構築が不可欠です。私たちは、経営者の皆様が安心して挑戦し続けられる強固な基盤づくりを全力で支援いたします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. コンバージョンエリア（CTA） -->
     <section class="container">
         <div id="cta-sec">
             <h2 class="cta-lead">自社の健康＆経済リスクを可視化する</h2>
             <p class="cta-desc">
                 多くの経営者が「健康」や「予防の仕組み」を後回しにし、情報に触れていないことで手遅れになるリスクを抱えています。まずは自社のリスクマネジメントの第一歩として、以下の「ニーズアンケート」に回答し、現在の対策ニーズを可視化してください。
             </p>
-            <a href="#" class="btn-cta">【1分で完了】健康＆経済リスク対策ニーズアンケートに回答する</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScBxJOSQpY2W0-juwAb9yXVhZh6Ho6TkFADCV5Iy1e1etnu4g/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn-cta">健康＆経済リスク対策ニーズアンケートに回答する</a>
         </div>
     </section>
 
-    <!-- 7. フッター -->
+    <!-- 8. フッター -->
     <footer>
         <div class="container">
-            <p>Copyright &copy; さくら労働組合 (がん共済アイリス) All Rights Reserved.</p>
+            <div class="footer-company">
+                <div class="footer-company-name">合同会社KVS</div>
+                <div class="footer-company-info">
+                    代表：曽我 篤<br>
+                    〒590-0423 大阪府泉南郡熊取町自由が丘1-17-14<br>
+                    電話：<a href="tel:09099900411">090-9990-0411</a><br>
+                    メール：<a href="mailto:kvs260820@gmail.com">kvs260820@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <p>Copyright &copy; 合同会社KVS / さくら労働組合 (がん共済アイリス) All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
