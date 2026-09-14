@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【会社経営者向け】がん予防・経済リスク対策共済 | がん共済アイリス</title>
+    <style>
+        /* ===== BASE STYLES ===== */
+        :root {
+            --bg-dark: #0a0e17;
+            --bg-card: #121826;
+            --text-main: #f1f5f9;
+            --text-sub: #94a3b8;
+            --gold-light: #fef08a;
+            --gold-main: #d97706;
+            --gold-gradient: linear-gradient(135deg, #fef08a 0%, #d97706 50%, #92400e 100%);
+            --red-accent: #ef4444;
+            --blue-accent: #0284c7;
+            --border-color: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-gradient);
+            color: #000;
+            font-weight: 800;
+            font-size: 1.15rem;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid #fef08a;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(217, 119, 6, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .btn-cta::after {
+            content: "➔";
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* ===== SECTION 1: FIRST VIEW ===== */
+        #fv {
+            background: radial-gradient(circle at 70% 30%, #1e293b 0%, #0a0e17 70%);
+            padding: 80px 0 10px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .fv-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .fv-text {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        .fv-sub {
+            color: var(--red-accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.1);
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .fv-main {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .fv-desc {
+            color: var(--text-sub);
+            font-size: 1.05rem;
+            margin-bottom: 35px;
+        }
+
+        .fv-image-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .ceo-img-placeholder {
+            width: 100%;
+            height: 420px;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-sub);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        /* ===== SECTION 2: RISK OF CEO ===== */
+        .sec-padding {
+            padding: 90px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .sec-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sec-tag {
+            color: var(--gold-main);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .sec-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .sec1-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .stat-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--red-accent);
+            line-height: 1;
+            margin: 15px 0;
+        }
+
+        .stat-breakdown {
+            margin-top: 25px;
+            text-align: left;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== SECTION 3: INFORMATION GAP (G7) ===== */
+        .bg-light-sec {
+            background-color: #0f172a;
+        }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comp-table th, .comp-table td {
+            padding: 16px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .comp-table th {
+            background-color: #1e293b;
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        .badge-worst {
+            color: var(--red-accent);
+            font-weight: bold;
+            background: rgba(239,68,68,0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .badge-best {
+            color: #10b981;
+            font-weight: bold;
+            background: rgba(16,185,129,0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* ===== SECTION 4: SCHEME ===== */
+        .scheme-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .scheme-card {
+            background: linear-gradient(180deg, #131c2e 0%, #0f172a 100%);
+            border: 1px solid var(--blue-accent);
+            border-radius: 10px;
+            padding: 20px 15px;
+            position: relative;
+        }
+
+        .scheme-step-num {
+            background-color: var(--blue-accent);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .scheme-card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .scheme-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        /* ===== SECTION 5: TRUST ===== */
+        .trust-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--gold-main);
+            border-radius: 12px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .trust-badge {
+            text-align: center;
+            border-right: 1fr solid var(--border-color);
+        }
+
+        .trust-badge-icon {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* ===== SECTION 6: CTA ===== */
+        #cta-sec {
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0a0e17 100%);
+            border: 2px solid var(--gold-main);
+            border-radius: 16px;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px auto;
+        }
+
+        .cta-lead {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .cta-desc {
+            color: var(--text-sub);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* ANIMATION */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .fv-grid, .sec1-grid, .trust-box {
+                grid-template-columns: 1fr;
+            }
+            .scheme-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .fv-main {
+                font-size: 1.8rem;
+            }
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ファーストビュー（FV） -->
+    <section id="fv">
+        <div class="container fv-grid">
+            <div class="fv-text">
+                <span class="fv-sub">【会社経営者・代表取締役 専任リスクマネジメント】</span>
+                <h1 class="fv-main">
+                    一人の代表者の離脱が<br>
+                    <span class="gold-text">「震災級の企業損失」</span>に。<br>
+                    手遅れになる前の「予防の仕組み化」
+                </h1>
+                <p class="fv-desc">
+                    多忙を理由にご自身の健康管理を棚上げしていませんか？代表の長期離脱は会社の停滞・倒産リスクそのものです。ビジネス特許取得の「がん予防・全額保障共済」で会社と家族を守り抜く。
+                </p>
+                <a href="#cta-sec" class="btn-cta">今すぐ自社のリスクを可視化する（無料）</a>
+            </div>
+            <div class="fv-image-container">
+                <div class="ceo-img-placeholder">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">👔</div>
+                    <p style="font-weight: bold; color: #fff;">【経営者ビジュアル】</p>
+                    <p style="font-size: 0.85rem; margin-top: 5px; max-width: 80%;">腕を組み、険しい表情で前を見据えるスーツ姿の代表者（ダークトーン背景）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. セクション1：【大黒柱のリスク】 -->
+    <section class="sec-padding">
+        <div class="container">
+            <div class="sec-header">
+                <span class="sec-tag">SECTION 01 / 大黒柱のリスク</span>
+                <h2 class="sec-title">一人の代表者の離脱がもたらす「震災級の企業損失」</h2>
+            </div>
+            <div class="sec1-grid">
+                <div class="stat-box">
+                    <div style="font-size: 0.9rem; color: var(--text-sub);">がん関連・日本全体の年間経済損失</div>
+                    <div class="stat-number">約12兆円</div>
+                    <div style="color: var(--red-accent); font-weight: bold; font-size: 0.95rem;">※東日本大震災の総被害額に匹敵</div>
+                    <div class="stat-breakdown">
+                        <div class="stat-item">
+                            <span>直接的ながん医療費</span>
+                            <span style="font-weight:bold; color:var(--red-accent);">約4兆円</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>働き盛りの人材喪失ロス</span>
+                            <span style="font-weight:bold; color:var(--red-accent);">約6兆円</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>闘病・休職に伴う生産性低下</span>
+                            <span style="font-weight:bold; color:var(--red-accent);">約2兆円</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p style="font-size: 1.05rem; margin-bottom: 20px;">
+                        中小企業において、代表者は単なるプレイヤーではなく、会社を支える絶対的な<b>「大黒柱」</b>です。しかし、忙しさにかまけてご自身の健康を「棚上げ（後回し）」にしていませんか？
+                    </p>
+                    <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8;">
+                        がんは個人の健康を奪うだけでなく、日本経済そのものを激しく蝕んでいます。がんに関連する日本全体の経済的損失は、年間約12兆円にのぼると推計されており、これは東日本大震災の被害額に匹敵する規模です。<br><br>
+                        一人の経営者が突然がんで長期離脱した瞬間、意思決定はストップし、人的・経済的損失は企業にとって<b>「震災級の致命傷」</b>となります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. セクション2：【知られざる危機】 -->
+    <section class="sec-padding bg-light-sec">
+        <div class="container">
+            <div class="sec-header">
+                <span class="sec-tag">SECTION 02 / 知られざる危機</span>
+                <h2 class="sec-title">G7ワースト。なぜ日本は「情報格差」から手遅れになるのか？</h2>
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: var(--text-sub);">
+                日本は世界最高水準の医療技術を持ちながら、主要先進7カ国（G7）の中で唯一、がんによる死亡者数・罹患者数がともに増加し続けている国です。この歪んだ現実の背景には、私たちの「予防リテラシーの低さ」と「がん対策の情報格差」があります。
+            </p>
+
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">区分</th>
+                        <th style="width: 35%;">事後対応（医療保険・精密ドック）</th>
+                        <th style="width: 35%;">事前対応（リスク検査・事前予防）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: bold;">欧米諸国（G7）</td>
+                        <td>標準レベル</td>
+                        <td><span class="badge-best">最高評価（徹底予防）</span></td>
+                    </tr>
+                    <tr style="background: rgba(239, 68, 68, 0.05);">
+                        <td style="font-weight: bold; color: var(--red-accent);">日本（現状）</td>
+                        <td><span class="badge-best">最高評価（手厚い補填）</span></td>
+                        <td><span class="badge-worst">G7最低評価（認知不足）</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 30px; font-size: 0.95rem; color: var(--text-sub); line-height: 1.8;">
+                従来の民間がん保険は、すべて「がんが確定した後の事後補填」にすぎません。しかし、本当に必要なのは「がんが目に見える大きさになる前のリスク」を日常的にチェックする仕組みです。<br>
+                多忙を理由に検診を後回しにし、自覚症状が出るステージ4で発見されることは、経営者にとって「最大のリスク」です。経営に最も早く復帰し、会社を守るための絶対条件は、自覚症状がない<b>「ステージ1（初期）」の段階で確実にがんを捉えること</b>なのです。
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. セクション3：【予防の仕組み化】 -->
+    <section class="sec-padding">
+        <div class="container">
+            <div class="sec-header">
+                <span class="sec-tag" style="color: var(--blue-accent);">SECTION 03 / 予防の仕組み化</span>
+                <h2 class="sec-title">良好な会社運営を支える、特許取得の「一気通貫スキーム」</h2>
+            </div>
+            <p style="text-align: center; max-width: 850px; margin: 0 auto 20px; color: var(--text-sub);">
+                これまでの日本のがん対策は、予防、検査、精密ドック、治療保障がすべてバラバラに断絶されていました。その隙間に潜む「経済的な壁」や「情報の空白」をすべて繋ぎ、一つのシステムで会社を丸ごと守り抜く仕組みが、ビジネス特許を取得した<b>「一気通貫スキーム（がん共済アイリス）」</b>です。
+            </p>
+
+            <div class="scheme-grid">
+                <div class="scheme-card">
+                    <span class="scheme-step-num">STEP 01</span>
+                    <div class="scheme-card-title">日常予防の仕組み化</div>
+                    <p class="scheme-card-desc"><b>【健康アプリ】</b><br>スマホを持って歩くだけで10歩＝1円相当の買い物ポイントに還元。無理なく歩行習慣化を促進。</p>
+                </div>
+                <div class="scheme-card">
+                    <span class="scheme-step-num">STEP 02</span>
+                    <div class="scheme-card-title">超早期リスクの仕組み化</div>
+                    <p class="scheme-card-desc"><b>【5-ALAリスク検査】</b><br>自宅でわずか1分、尿を郵送するだけ。全身97部位（109種類）の超早期がんリスクを科学的に視覚化。</p>
+                </div>
+                <div class="scheme-card">
+                    <span class="scheme-step-num">STEP 03</span>
+                    <div class="scheme-card-title">精密ドックの仕組み化</div>
+                    <p class="scheme-card-desc"><b>【費用実費補填】</b><br>リスク判定時、高額なPET/CTドック等の費用を最大20万〜30万円実費補填。受診の遅れをゼロに。</p>
+                </div>
+                <div class="scheme-card">
+                    <span class="scheme-step-num">STEP 04</span>
+                    <div class="scheme-card-title">治療保障の仕組み化</div>
+                    <p class="scheme-card-desc"><b>【実費全額保障】</b><br>最先端の自由診療や全世界の先進医療費用を上限なく無制限で実費保障。「60歳の壁」も一切なし。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. セクション4：【組織の信頼性】 -->
+    <section class="sec-padding bg-light-sec">
+        <div class="container">
+            <div class="sec-header">
+                <span class="sec-tag">SECTION 04 / 組織の信頼性</span>
+                <h2 class="sec-title">公的な法的基盤に基づく非営利組織</h2>
+            </div>
+            <div class="trust-box">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">🛡️</div>
+                    <h3 style="font-size: 1.2rem; color: var(--gold-light);">さくら労働組合</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin-top: 5px;">（厚生労働省管轄・連合組合）</p>
+                </div>
+                <div>
+                    <p style="font-size: 0.95rem; line-height: 1.8;">
+                        「がん共済アイリス」を組成する主体は、一般的な民間医療保険会社とは決定的に異なります。厚生労働省の管轄下にある労働組合法に基づいた、公的で透明性の高い非営利組織です。
+                    </p>
+                    <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-sub); font-size: 0.9rem;">
+                        <li><b>経費の無駄を徹底削減：</b> 莫大なTVCM広告費はかけず、信頼の紹介ネットワークで普及させることで手厚いスペックを実現。</li>
+                        <li><b>家族まるごと防衛：</b> 経営者・従業員本人だけでなく、配偶者や子供、さらには二親等以内の両親まで同条件で強力防衛。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. コンバージョンエリア（CTA） -->
+    <section class="container">
+        <div id="cta-sec">
+            <h2 class="cta-lead">自社の健康＆経済リスクを可視化する</h2>
+            <p class="cta-desc">
+                多くの経営者が「健康」や「予防の仕組み」を後回しにし、情報に触れていないことで手遅れになるリスクを抱えています。まずは自社のリスクマネジメントの第一歩として、以下の「ニーズアンケート」に回答し、現在の対策ニーズを可視化してください。
+            </p>
+            <a href="#" class="btn-cta">【1分で完了】健康＆経済リスク対策ニーズアンケートに回答する</a>
+        </div>
+    </section>
+
+    <!-- 7. フッター -->
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; さくら労働組合 (がん共済アイリス) All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
